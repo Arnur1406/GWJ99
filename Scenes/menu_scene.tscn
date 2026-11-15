@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://durwbcfe48cva"]
 
 [ext_resource type="Script" uid="uid://c7ap5fcswnayt" path="res://Scripts/button_controller.gd" id="1_1opiu"]
+[ext_resource type="Texture2D" uid="uid://tlnhatqjaeck" path="res://Assets/Sprites/gwj99testBackground.png" id="2_i2hkk"]
+[ext_resource type="Texture2D" uid="uid://gfvwqs2i2e2y" path="res://Assets/Sprites/gwj99testStartButton.png" id="3_kcfjh"]
+[ext_resource type="Texture2D" uid="uid://bmhfnq3tv8qoj" path="res://Assets/Sprites/gwj99testSettingsButton.png" id="4_yvq3c"]
+[ext_resource type="Texture2D" uid="uid://b3eb0mcwm6tsi" path="res://Assets/Sprites/QuitButton.png" id="5_jjc8c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1515m"]
 bg_color = Color(0, 0, 0, 1)
@@ -52,32 +56,67 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1opiu")
 
-[node name="VButtonContainer" type="VBoxContainer" parent="ButtonController" unique_id=2067430139]
-layout_mode = 1
-offset_right = 79.0
-offset_bottom = 101.0
-
-[node name="StartButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=1545039198]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
+[node name="StartButton" type="Button" parent="ButtonController" unique_id=1545039198]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 89.0
+offset_bottom = 45.0
+scale = Vector2(0.4626136, 1.1484282)
 text = "START"
 
-[node name="OptionsButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=938024442]
-layout_mode = 2
+[node name="OptionsButton" type="Button" parent="ButtonController" unique_id=938024442]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 10.000001
+offset_top = 55.000004
+offset_right = 89.0
+offset_bottom = 86.0
+scale = Vector2(0.47999996, 1.08)
 theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
 text = "OPTIONS"
 
-[node name="QuitButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=2125424894]
-layout_mode = 2
+[node name="QuitButton" type="Button" parent="ButtonController" unique_id=2125424894]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 97.0
+offset_right = 86.0
+offset_bottom = 128.0
+scale = Vector2(0.52000016, 1.3199999)
 theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
 text = "QUIT"
 
-[connection signal="pressed" from="ButtonController/VButtonContainer/StartButton" to="ButtonController" method="_on_start_button_pressed"]
-[connection signal="pressed" from="ButtonController/VButtonContainer/OptionsButton" to="ButtonController" method="_on_options_button_pressed"]
-[connection signal="pressed" from="ButtonController/VButtonContainer/QuitButton" to="ButtonController" method="_on_quit_button_pressed"]
+[node name="Visual" type="Node" parent="." unique_id=992628791]
+
+[node name="Background" type="Sprite2D" parent="Visual" unique_id=660123544]
+position = Vector2(320, 180)
+texture = ExtResource("2_i2hkk")
+
+[node name="StartButton" type="Sprite2D" parent="Visual" unique_id=1715351143]
+position = Vector2(320, 180)
+texture = ExtResource("3_kcfjh")
+
+[node name="SettingsButton" type="Sprite2D" parent="Visual" unique_id=469863441]
+position = Vector2(320, 180)
+texture = ExtResource("4_yvq3c")
+
+[node name="QuitButton" type="Sprite2D" parent="Visual" unique_id=1553778328]
+position = Vector2(320, 180)
+texture = ExtResource("5_jjc8c")
+
+[node name="Label" type="Label" parent="Visual" unique_id=1120273921]
+offset_left = 298.0
+offset_top = 121.0
+offset_right = 344.0
+offset_bottom = 144.0
+text = "GAME"
+
+[connection signal="pressed" from="ButtonController/StartButton" to="ButtonController" method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonController/OptionsButton" to="ButtonController" method="_on_options_button_pressed"]
+[connection signal="pressed" from="ButtonController/QuitButton" to="ButtonController" method="_on_quit_button_pressed"]
