@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gfvwqs2i2e2y" path="res://Assets/Sprites/gwj99testStartButton.png" id="3_kcfjh"]
 [ext_resource type="Texture2D" uid="uid://bmhfnq3tv8qoj" path="res://Assets/Sprites/gwj99testSettingsButton.png" id="4_yvq3c"]
 [ext_resource type="Texture2D" uid="uid://b3eb0mcwm6tsi" path="res://Assets/Sprites/QuitButton.png" id="5_jjc8c"]
+[ext_resource type="Texture2D" uid="uid://ctduds84nocy4" path="res://Assets/Sprites/gwj99testTaskBar.png" id="6_kcfjh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1515m"]
 bg_color = Color(0, 0, 0, 1)
@@ -109,6 +110,10 @@ texture = ExtResource("4_yvq3c")
 [node name="QuitButton" type="Sprite2D" parent="Visual" unique_id=1553778328]
 position = Vector2(320, 180)
 texture = ExtResource("5_jjc8c")
+
+[node name="TaskBar" type="Sprite2D" parent="Visual" unique_id=1868327154]
+position = Vector2(320, 180)
+texture = ExtResource("6_kcfjh")
 
 [node name="Label" type="Label" parent="Visual" unique_id=1120273921]
 offset_left = 298.0
