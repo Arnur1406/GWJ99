@@ -1,3 +1,83 @@
 [gd_scene format=3 uid="uid://durwbcfe48cva"]
 
+[ext_resource type="Script" uid="uid://c7ap5fcswnayt" path="res://Scripts/button_controller.gd" id="1_1opiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1515m"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(4.428029e-06, 0.75198615, 0.9407544, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00c8u"]
+bg_color = Color(0.09923177, 0.09923177, 0.0992317, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(3.465414e-06, 0.44519717, 0.56220233, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1opiu"]
+bg_color = Color(0.22670737, 0.22670752, 0.22670746, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.27528098, 0.8212848, 0.99999994, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+
 [node name="MenuScene" type="Node2D" unique_id=528165318]
+
+[node name="ButtonController" type="Control" parent="." unique_id=1990552591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1opiu")
+
+[node name="VButtonContainer" type="VBoxContainer" parent="ButtonController" unique_id=2067430139]
+layout_mode = 1
+offset_right = 79.0
+offset_bottom = 101.0
+
+[node name="StartButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=1545039198]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
+text = "START"
+
+[node name="OptionsButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=938024442]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="ButtonController/VButtonContainer" unique_id=2125424894]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1515m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_00c8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1opiu")
+text = "QUIT"
+
+[connection signal="pressed" from="ButtonController/VButtonContainer/StartButton" to="ButtonController" method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonController/VButtonContainer/OptionsButton" to="ButtonController" method="_on_options_button_pressed"]
+[connection signal="pressed" from="ButtonController/VButtonContainer/QuitButton" to="ButtonController" method="_on_quit_button_pressed"]
